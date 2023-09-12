@@ -4,7 +4,7 @@ import './stylesMenu.scss'; // Importa los estilos para este componente.
 import Logo from '../../assets/images/UAM-Logo.png'; // Importa la imagen del logo.
 import Avatar from '../../assets/images/avatar.jpeg'; // Importa la imagen del avatar.
 import 'font-awesome/css/font-awesome.min.css'; // Importa estilos de Font Awesome, una biblioteca de iconos.
-
+import {Link} from 'react-scroll' //Importa El Objeto Link
 // Declara una clase llamada Navbar que extiende la clase Component de React.
 class Navbar extends Component {
   constructor(props) {
@@ -37,13 +37,19 @@ class Navbar extends Component {
         {/* Lista de opciones de navegación */}
         <ul className={`navbar-options ${isMenuOpen ? 'active' : ''}`}>
           <li>
-            <a href="./pages/flex.html">Flexbox</a>
+            <Link to="SectionOne" spy={true} smooth={true} offset={-70} duration={500}>
+                Flexbox
+            </Link>
           </li>
           <li>
-            <a href="./pages/contact.html">Contact</a>
+            <Link to="SectionTwo" spy={true} smooth={true} offset={-70} duration={500}>
+                Contact
+            </Link>
           </li>
           <li>
-            <a href="./pages/products.html">Products</a>
+            <Link to="SectionThree" spy={true} smooth={true} offset={-70} duration={500}>
+                Products
+            </Link>
           </li>
         </ul>
         {/* Contenedor para la imagen de perfil del usuario */}
