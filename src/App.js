@@ -5,11 +5,12 @@ import { SectionOne } from './components/SectionOne/SectionOne';
 import { SectionTwo } from './components/SectionTwo/SectionTwo';
 import { SectionThree } from './components/SectionThree/SectionThree';
 import {SlideNav} from './components/slide/slide';
-
+import {MenuLateral} from './components/menuLateral/menuLateral'
 function App() {
   return (
     <div className="App">
       <Menu /> 
+      <MenuLateral />
       <SectionOne />
       <SectionTwo />
       <SectionThree />
