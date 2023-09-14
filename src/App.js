@@ -6,11 +6,14 @@ import { SectionTwo } from './components/SectionTwo/SectionTwo';
 import { SectionThree } from './components/SectionThree/SectionThree';
 import {SlideNav} from './components/slide/slide';
 import {MenuLateral} from './components/menuLateral/menuLateral'
+import Cube from './components/cube/cube'
+
 function App() {
   return (
     <div className="App">
       <Menu /> 
       <MenuLateral />
+      <Cube />
       <SectionOne />
       <SectionTwo />
       <SectionThree />
