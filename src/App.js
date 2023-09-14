@@ -4,6 +4,7 @@ import Menu from './components/menu/menu';
 import { SectionOne } from './components/SectionOne/SectionOne';
 import { SectionTwo } from './components/SectionTwo/SectionTwo';
 import { SectionThree } from './components/SectionThree/SectionThree';
+import {SlideNav} from './components/slide/slide';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         
       </div>
       <div className="footer"></div>
+      <SlideNav />
     </div>
   );
 }
