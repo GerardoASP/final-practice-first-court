@@ -7,16 +7,14 @@ import { SectionThree } from './components/SectionThree/SectionThree';
 import {SlideNav} from './components/slide/slide';
 import {MenuLateral} from './components/menuLateral/menuLateral'
 import Cube from './components/cube/cube'
+import TraslucentMenu from './components/TraslucentMenu/TraslucentMenu';
 
 function App() {
   return (
     <div className="App">
-      <Menu /> 
+      <Menu />
       <MenuLateral />
       <Cube />
-      <SectionOne />
-      <SectionTwo />
-      <SectionThree />
       <div className="content">
         
       </div>

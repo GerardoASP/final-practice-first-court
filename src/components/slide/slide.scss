@@ -1,8 +1,12 @@
 .slideContainer{
-    height: 600px;
+    height: 620px;
     background-color: aqua;
+    .character-info {
+        text-align: center;
+    }
 }
 
 .slick-slide img {
     margin: auto;
 }
+
