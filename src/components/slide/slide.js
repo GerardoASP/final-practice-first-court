@@ -4,9 +4,12 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import "./slide.scss"
-import { Button } from '@material-ui/core'
+import { Button, IconButton } from '@material-ui/core'
 import { images } from '../../assets'
 import { Box, Modal, Typography } from '@mui/material'
+import { FavoritesSlide } from '../SlideNavFav/SlideNavFav'
+import { BuyersSlide } from '../SlideNavBuy/SlideNavBuy'
+import { Favorite, ShoppingCart } from '@material-ui/icons'
 
 
 export const SlideNav = () => {
@@ -50,11 +53,19 @@ export const SlideNav = () => {
           nameService: "Lynx Landau",
           serviceDescription: "Exploradora en Belobog",
           avatar: images.character3,
-        },
+        },{
+          _id: "4",
+          nameService: "Clara",
+          serviceDescription: "Criada por un robot",
+          avatar: images.character4,
+        }
     ];
 
     const [open,setOpen] = useState(false);
     const [selectedCharacter,setSelectedCharacter] = useState(null);
+    const [favorites, setFavorites] = useState([]);
+    const [buyers,setBuyers] = useState([]);
+
     const handleOpen = (characterId) => {
         console.log("charactersId", characterId);
         console.log("characters", characters);
@@ -65,9 +76,19 @@ export const SlideNav = () => {
     };
     const handleClose = () => setOpen(false);
 
+    const handleFavorite = () => {
+      setFavorites(prevFavorites => [...prevFavorites, selectedCharacter]);
+    };
+
+    const handleBuyer = () => {
+      setBuyers(prevBuyers => [...prevBuyers, selectedCharacter]);
+    };
+
   return (
     <div className='slideContainer' id='slideContainer'>
-        <h1>Slides</h1>
+        <div className='title-slides'>
+          <h1>Slides</h1>
+        </div>
         <Slider {...settings}>
         {characters.map((character,idCharacter)=>{return(
         <div key={idCharacter}>
@@ -83,6 +104,8 @@ export const SlideNav = () => {
         </div>
         )})}
         </Slider>
+        <FavoritesSlide favorites={favorites} />
+        <BuyersSlide buyers={buyers} />
         <Modal  open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" >
             <Box sx={style}>
                 <Typography id="modal-modal-title" variant="h6" component="h2" style={{fontSize: 36,textAlign: 'center'}}>
@@ -92,8 +115,12 @@ export const SlideNav = () => {
                 <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{fontSize: 20,textAlign: 'center'}}>
                     {selectedCharacter ? selectedCharacter.serviceDescription : ''}
                 </Typography>
+                <div className='container-buttons'>
+                  <Button variant="contained" color="primary" startIcon={<Favorite/>} onClick={handleFavorite}/>
+                  <Button variant="contained" color="primary" startIcon={<ShoppingCart/>} onClick={handleBuyer}/> 
+                </div>
             </Box>
-          </Modal>
+        </Modal>
     </div>
   )
 }

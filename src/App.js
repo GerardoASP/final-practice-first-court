@@ -8,13 +8,13 @@ import {SlideNav} from './components/slide/slide';
 import {MenuLateral} from './components/menuLateral/menuLateral'
 import Cube from './components/cube/cube'
 import TraslucentMenu from './components/TraslucentMenu/TraslucentMenu';
+import { FavoritesSlide } from './components/SlideNavFav/SlideNavFav';
 
 function App() {
   return (
     <div className="App">
       <Menu />
       <MenuLateral />
-      <Cube />
       <div className="content">
         
       </div>
