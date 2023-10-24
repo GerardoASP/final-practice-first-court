@@ -1,28 +1,24 @@
-.title-slides{
+.title-slides-three{
     text-align: center;
     -webkit-text-stroke-width: 3px;
     -webkit-text-stroke-color: blue;
 }
-.slideContainer{
-    height: 620px;
+.slideContainer3{
+    height: 570px;
     background-color: aqua;
     .character-info {
         text-align: center;
     }
+    margin-top: 50px;
+    align-items: center;
 }
 
 .slick-slide img {
     margin: auto;
 }
 
-.container-buttons{
-    display: flex;
-    height: 50px;
-    justify-content: end;
-}
-
 @media (max-width: 600px) {
-    .slideContainer{
+    .slideContainer3{
         display: flex;
         justify-content: center;
         align-items: center;
@@ -32,7 +28,4 @@
         margin: 0;
     }
 
-    .container-buttons{
-        height: auto;
-    }
 }

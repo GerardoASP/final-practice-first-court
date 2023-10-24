@@ -1,38 +1,32 @@
-.title-slides{
+.title-slides-two{
     text-align: center;
     -webkit-text-stroke-width: 3px;
-    -webkit-text-stroke-color: blue;
+    -webkit-text-stroke-color: whitesmoke;
 }
-.slideContainer{
-    height: 620px;
-    background-color: aqua;
+
+.slideContainer2{
+    height: 570px;
+    background-color: aquamarine;
     .character-info {
         text-align: center;
     }
+    margin-top: 150px;
+    align-items: center;
 }
 
 .slick-slide img {
     margin: auto;
 }
 
-.container-buttons{
-    display: flex;
-    height: 50px;
-    justify-content: end;
-}
-
 @media (max-width: 600px) {
-    .slideContainer{
+    .slideContainer2{
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
     .slick-slide img {
-        margin: 0;
+        margin-left: 20;
     }
 
-    .container-buttons{
-        height: auto;
-    }
 }
