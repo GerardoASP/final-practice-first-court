@@ -9,16 +9,16 @@ import {MenuLateral} from './components/menuLateral/menuLateral'
 import Cube from './components/cube/cube'
 import TraslucentMenu from './components/TraslucentMenu/TraslucentMenu';
 import { FavoritesSlide } from './components/SlideNavFav/SlideNavFav';
+import Footer from './components/Footer/Footer';
+import PoliticalMenu from './components/PoliticalMenu/PoliticalMenu';
+import FavoritesCharactersList from './components/FavoritesCharactersList/FavoritesCharactersList';
+
 
 function App() {
   return (
     <div className="App">
       <Menu />
       <MenuLateral />
-      <div className="content">
-        
-      </div>
-      <div className="footer"></div>
       <SlideNav />
     </div>
   );

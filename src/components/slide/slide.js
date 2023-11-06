@@ -4,12 +4,15 @@ import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 
 import "./slide.scss"
-import { Button, IconButton } from '@material-ui/core'
+import { Button} from '@material-ui/core'
 import { images } from '../../assets'
 import { Box, Modal, Typography } from '@mui/material'
-import { FavoritesSlide } from '../SlideNavFav/SlideNavFav'
-import { BuyersSlide } from '../SlideNavBuy/SlideNavBuy'
 import { Favorite, ShoppingCart } from '@material-ui/icons'
+import FavoritesCharactersList from '../FavoritesCharactersList/FavoritesCharactersList'
+import BuyersCharactersList from '../BuyersCharactersList/BuyersCharactersList'
+import Footer from '../Footer/Footer'
+
+
 
 
 export const SlideNav = () => {
@@ -94,7 +97,7 @@ export const SlideNav = () => {
         <div key={idCharacter}>
           <img
             src={character.avatar}
-            alt={`Image ${idCharacter}`}
+            alt={`Avatar of ${character.nameService}`}
           />  
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Button variant="contained" color="primary" onClick={() => handleOpen(character._id)}>
@@ -104,14 +107,15 @@ export const SlideNav = () => {
         </div>
         )})}
         </Slider>
-        <FavoritesSlide favorites={favorites} />
-        <BuyersSlide buyers={buyers} />
+        <FavoritesCharactersList favorites={favorites} />
+        <BuyersCharactersList buyers={buyers} />
+        <Footer />
         <Modal  open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" >
             <Box sx={style}>
                 <Typography id="modal-modal-title" variant="h6" component="h2" style={{fontSize: 36,textAlign: 'center'}}>
                     {selectedCharacter ? selectedCharacter.nameService : ''}
                 </Typography>
-                <img src={selectedCharacter ? selectedCharacter.avatar : ''} style={{width: '300px', height: '200px', borderRadius:25, marginLeft:50}}/>
+                <img src={selectedCharacter ? selectedCharacter.avatar : ''} style={{width: '300px', height: '200px', borderRadius:25, marginLeft:50}} alt='dios'/>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{fontSize: 20,textAlign: 'center'}}>
                     {selectedCharacter ? selectedCharacter.serviceDescription : ''}
                 </Typography>
