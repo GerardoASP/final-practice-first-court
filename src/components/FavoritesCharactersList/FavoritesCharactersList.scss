@@ -1,0 +1,23 @@
+.Container5{
+    height: 620px;
+    background-color: aquamarine;
+}
+.img-content-grid {
+    display: flex;
+    flex-direction: row;
+    .container-id{
+        background-color: brown;
+        width: 50%;
+        justify-content: center;
+        align-items: center;
+    }
+    .container-favorite{
+        background-color: brown;
+        width: 50%;
+    }
+    img {
+      width: 50%;
+      height: 50%;
+      background-color: white;
+    }
+}
