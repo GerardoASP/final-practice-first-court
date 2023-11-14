@@ -10,33 +10,36 @@ const BuyersCharactersList = ({ buyers }) => {
       <div className='title-slides-two'>
         <h1>Buyers</h1>
       </div>
-      <div className="img-content-grid">
+      <div className="img-content-grid-2">
         {buyers && buyers.length > 0 ? (
           buyers.map((character) => (
             <div key={character._id}>
-              <Card sx={{maxWidth:100, margin:'auto'}}>
-                <div className='container-id'>
-                    <CardContent>
-                        <Typography variant="h3" color="text.secondary">
-                          {character._id}
-                        </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                  component="img"
-                  height="350"
-                  image={character.avatar}
-                  alt='image-character'
-                />
-                <div className='container-favorite'>
-                  <CardContent>
-                    <Typography variant="h3" color="text.secondary">
-                      Favorite
+              <div className="container-card-2">
+	              <div className="container-header-2">
+		              <div className="item-id-2">
+			              <Typography variant="subtitle1" color="text.secondary">
+                      {character._id}
                     </Typography>
-                  </CardContent>
-                </div>
-                
-              </Card>
+		              </div>
+		              <div className="item-name-2">
+			              <Typography variant="subtitle1" color="text.secondary">
+                      {character.nameService}
+                    </Typography>
+		              </div>
+	              </div>
+	              <div className="container-body-2">
+		              <div className="item-image-2">
+			              <img src={character.avatar} alt={`Avatar ${character._id}`}/>
+		              </div>
+	              </div>
+	              <div className="final-container-2">
+		              <div className="item-text-2">
+			              <Typography variant="subtitle1" color="text.secondary">
+                      Buyer
+                    </Typography>
+		              </div>
+	              </div>
+              </div>
             </div>
           ))
           ) : (

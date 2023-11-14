@@ -1,0 +1,34 @@
+.image-central{
+    margin-left: 300px;
+    width: 70%;
+    height: 200px;
+}
+
+.services-erp-text{
+    margin-left: 700px;
+    margin-bottom: 20px;
+    font-size: 36px;
+}
+
+.services-erp-text-2{
+    margin-left: 780px;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.worker-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    .worker{
+        .image-worker{
+            border-radius: 10px;
+            background-color: aqua;
+            height: 100px;
+        }
+        .services-erp-text-3{
+            margin-left: 20px;
+            font-size: 20px;
+        }
+    }
+}

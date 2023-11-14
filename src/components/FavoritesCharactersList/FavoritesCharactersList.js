@@ -13,29 +13,32 @@ const FavoritesCharactersList = ({ favorites }) => {
         {favorites && favorites.length > 0 ? (
           favorites.map((character) => (
             <div key={character._id}>
-              <Card sx={{maxWidth:100, margin:'auto'}}>
-                <div className='container-id'>
-                    <CardContent>
-                        <Typography variant="h3" color="text.secondary">
-                          {character._id}
-                        </Typography>
-                    </CardContent>
-                </div>
-                <CardMedia
-                  component="img"
-                  height="350"
-                  image={character.avatar}
-                  alt='character-image'
-                />
-                <div className='container-favorite'>
-                  <CardContent>
-                    <Typography variant="h3" color="text.secondary">
+              <div className="container-card">
+	              <div className="container-header">
+		              <div className="item-id">
+			              <Typography variant="subtitle1" color="text.secondary">
+                      {character._id}
+                    </Typography>
+		              </div>
+		              <div className="item-name">
+			              <Typography variant="subtitle1" color="text.secondary">
+                      {character.nameService}
+                    </Typography>
+		              </div>
+	              </div>
+	              <div className="container-body">
+		              <div className="item-image">
+			              <img src={character.avatar} alt={`Avatar ${character._id}`}/>
+		              </div>
+	              </div>
+	              <div className="final-container">
+		              <div className="item-text">
+			              <Typography variant="subtitle1" color="text.secondary">
                       Favorite
                     </Typography>
-                  </CardContent>
-                </div>
-                
-              </Card>
+		              </div>
+	              </div>
+              </div>
             </div>
           ))
           ) : (

@@ -1,11 +1,14 @@
-import { Link } from '@material-ui/core'
 import { LinkedIn, LocationOn } from '@material-ui/icons'
 import { Facebook, Instagram, LocalPhone, YouTube } from '@mui/icons-material'
 import { Box, Container, Grid,Typography } from '@mui/material'
 import React from 'react'
-import Avatar from '../../assets/images/UAM-Logo.png';
+import Avatar from '../../assets/images/Hugo-Salazar-Ospina-removebg-preview.png';
 import './Footer.scss';
+import { Link } from 'react-router-dom';
+import { IconButton } from '@material-ui/core';
 const Footer = () => {
+    
+
   return (
     <Box
       component="footer"
@@ -48,25 +51,19 @@ const Footer = () => {
                     <Typography variant="h6" color="text.primary" gutterBottom>
                         Redes Sociales
                     </Typography>
-                    <Link href="https://www.facebook.com/" color="inherit">
-                        <Facebook fontSize='large'/>
-                    </Link>
-                    <Link href="https://www.instagram.com/" color="inherit">
-                        <Instagram fontSize='large'/>
-                    </Link>
-                    <Link href="https://www.youtube.com/" color="inherit">
-                        <YouTube fontSize='large'/>
-                    </Link>
-                    <Link href="https://www.youtube.com/" color="inherit">
-                        <LinkedIn fontSize='large'/>
-                    </Link>
+                    <Facebook fontSize='large'/>
+                    <Instagram fontSize='large'/>
+                    <YouTube fontSize='large'/>
+                    <LinkedIn fontSize='large'/>
                 </Grid>
                 <Grid item xs={12} sm={4}>
                     <Typography variant="h6" color="text.primary" gutterBottom>
                         Politica y privacidad de los datos
                     </Typography>
-                    <Link href="https://www.youtube.com/" color="inherit">
-                        <img src={Avatar} className="avatar" alt="Foto de perfil" />
+                    <Link to="/policies">
+                        <IconButton color="primary" aria-label="add to shopping cart">
+                            <img src={Avatar} />
+                        </IconButton>
                     </Link>
                 </Grid>
             </Grid>

@@ -5,19 +5,47 @@
 .img-content-grid {
     display: flex;
     flex-direction: row;
-    .container-id{
-        background-color: brown;
-        width: 50%;
+    .container-card{
         justify-content: center;
         align-items: center;
+        padding-right: 20px;
+        .container-header{
+            display: flex;
+            flex-direction: row;
+            background-color: brown;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            .item-id{
+                border-radius: 10px;
+                background-color: white;
+                margin-right: 30px;
+            }
+            .item-name{
+                border-radius: 5px;
+                background-color: white;
+            }
+        }
+        .container-body{
+            .item-image{
+                width: 50%;
+                height: 50%;
+            }
+        }
+        .final-container{
+            background-color: brown;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            .item-text{
+                border-radius: 5px;
+                width: 50%;
+                background-color: white;
+            }
+        }
     }
     .container-favorite{
         background-color: brown;
         width: 50%;
-    }
-    img {
-      width: 50%;
-      height: 50%;
-      background-color: white;
     }
 }
