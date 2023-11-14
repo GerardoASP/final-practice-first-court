@@ -4,7 +4,7 @@ import "./SectionOne.scss"
 export const SectionOne = () => {
   return (
     <div className='SectionOne' id='SectionOne'>
-      Section One
+      En Stock
     </div>
     
   )
