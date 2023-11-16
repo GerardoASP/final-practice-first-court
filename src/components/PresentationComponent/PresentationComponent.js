@@ -12,10 +12,10 @@ const PresentationComponent = () => {
       </div>
       <div className='list-services-erp'>
         <div className='service-erp'>
-            <img src=''/>
             <div className='services-erp-text-2'>
                 Inventory
             </div>
+            <img src='https://cdn-icons-png.flaticon.com/512/10822/10822008.png' className='image-inventory'/>
         </div>
       </div>
       <div className='information-container'>

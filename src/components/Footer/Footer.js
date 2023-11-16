@@ -32,7 +32,7 @@ const Footer = () => {
                         </Grid>
                         <Grid item xs={6} sm={4}>
                             <Typography variant="body2" color="text.secondary" marginBottom={2}>
-                                Antigua Estación del Ferrocarril Manizales - Caldas - Colombia
+                                Bogota D.C - Colombia
                             </Typography>
                         </Grid>
                     </Grid>
