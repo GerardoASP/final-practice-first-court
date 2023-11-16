@@ -4,6 +4,17 @@
     height: 200px;
 }
 
+.list-services-erp{
+    .service-erp{
+        display: flex;
+        justify-content: center;
+        .image-inventory{
+            align-self: center;
+            height: 90px;
+        }
+    }
+}
+
 .services-erp-text{
     margin-left: 700px;
     margin-bottom: 20px;

@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 300px;
+    width: 500px;
     background-color: #7fffd4;
     margin-top: 30px;
     margin-left: 650px;
@@ -24,5 +24,13 @@
         border-width:1px;
         border-color:'"ccc';
         border-radius:3px;
+    }
+
+    .country-container{
+        display: flex;
+        justify-content: center;
+        .button-validation-co{
+            align-self: start;
+        }
     }
 }
