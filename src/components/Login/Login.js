@@ -11,6 +11,11 @@ const Login = () => {
         console.log('Di click en homeAdmin');
         window.location.href = '/HomeAdmin';
       }
+    
+    const homeUser = () =>{
+      console.log('Di click en homeUser');
+      window.location.href = '/HomeUser';
+    }
    
     const handleLogin = async () => {
         const userData = {
@@ -26,12 +31,22 @@ const Login = () => {
         body: JSON.stringify(userData),
       });
       const data = await response.json();
-      console.log(data);
+      //const roleAy = data.role
+      //console.log('ayuda',roleAy)
+      console.log(data)
       if (typeof data !== 'undefined' && data !== null) {
         if(!data.access){
-            console.log("No puedes")
+            console.log("No puedes iniciar sesión")
         }else{
-            homeAdmin()
+          if (data.rol === "admin") {
+            homeAdmin();
+          }else if (data.rol === 'user') {
+            homeUser();
+          }else{
+            console.log("Rol desconocido");
+          }
+            //homeAdmin()
+            //homeUser()
         }
         
       } else {
@@ -44,29 +59,23 @@ const Login = () => {
     }
 
   return (
-    <div className='login-container'>
-        <div className='login-header'>
-            Login
-        </div>
-        <center style={{marginBottom:20}}>
-            "Ingresa los datos para cuenta Triptop"
-        </center>
-        <div className='email-container'>
-            <label>
-                email
-            </label>
-            <input type="text" name="email" className='input-text' value={email} onChange={e => setEmail(e.target.value)}/>
-        </div>
-        <div className='password-container'>
-            <label>
-                password
-            </label>
-            <input type="text" name="password" className='input-text' value={password} onChange={e => setPassword(e.target.value)}/>
-        </div>
-        
-            <Button onClick={handleLogin} >Aceptar</Button>
-        
+    <div className="login-container">
+      <form className="form">
+      <p className="title">Login </p>
+      <p className="message">Ingresa los datos para cuenta Triptop </p>
+      <label>
+          <input className="input" type="email" placeholder="" required="" value={email} onChange={e => setEmail(e.target.value)}/>
+          <span>Email</span>
+      </label> 
+
+      <label>
+          <input className="input" type="password" placeholder="" required="" value={password} onChange={e => setPassword(e.target.value)}/>
+          <span>Password</span>
+      </label>
+      <Button className="submit" onClick={handleLogin}>Accept</Button>
+  </form>
     </div>
+    
   )
 }
 

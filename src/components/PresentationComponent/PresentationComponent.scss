@@ -43,3 +43,67 @@
         }
     }
 }
+
+.section-one-presentation{
+    background-color: rgba(164, 155, 159, 0.66);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .image-section-one{
+        width: 100%;
+        height: 300px;
+    }
+    .text-section-one{
+        color: blue;
+        font-size: 35px;
+    }
+}
+
+.section-two-context{
+    background-color: rgba(190, 183, 186, 0.66);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .text-section-two{
+        color: blue;
+        font-size: 35px;
+    }
+    .card-module{
+        width: 200px;
+        height: 220px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 10px;
+        gap: 13px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.062);
+    }
+
+    svg {
+        width: 80px;
+    }
+
+    .module-heading{
+        font-size: 1.2em;
+        font-weight: 800;
+        color: rgb(26, 26, 26);
+    }
+}
+@media screen and (max-width: 780px) {
+    .image-central {
+        margin-left: 0;
+        width: 100%;
+    }
+    .services-erp-text, .services-erp-text-2 {
+        margin-left: 0;
+    }
+    .worker-container {
+        flex-direction: column;
+    }
+ }

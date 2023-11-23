@@ -1,4 +1,4 @@
-import {React,  useState } from 'react'
+import {React,  useEffect,  useState } from 'react'
 import Slider from 'react-slick'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
@@ -72,7 +72,7 @@ export const SlideNav = () => {
     const handleOpen = (characterId) => {
         console.log("charactersId", characterId);
         console.log("characters", characters);
-        const characterRes = characters.find((character) => character._id === characterId);
+        const characterRes = products.find((character) => character._id === characterId);
         console.log("character", characterRes);
         setSelectedCharacter(characterRes);
         setOpen(true);
@@ -87,17 +87,23 @@ export const SlideNav = () => {
       setBuyers(prevBuyers => [...prevBuyers, selectedCharacter]);
     };
 
+    const [products,setProducts]= useState([])
+    useEffect(() => {
+      fetch('http://localhost:3000/api/v1/products')
+        .then(response => response.json())
+        .then(data => setProducts(data));
+    }, []);
   return (
     <div className='slideContainer' id='slideContainer'>
         <div className='title-slides'>
           <h1>Slides</h1>
         </div>
         <Slider {...settings}>
-        {characters.map((character,idCharacter)=>{return(
+        {products.map((character,idCharacter)=>{return(
         <div key={idCharacter}>
           <img
             src={character.avatar}
-            alt={`Avatar of ${character.nameService}`}
+            alt={`Avatar of ${character.name}`}
           />  
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                 <Button variant="contained" color="primary" onClick={() => handleOpen(character._id)}>
@@ -113,11 +119,11 @@ export const SlideNav = () => {
         <Modal  open={open} onClose={handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description" >
             <Box sx={style}>
                 <Typography id="modal-modal-title" variant="h6" component="h2" style={{fontSize: 36,textAlign: 'center'}}>
-                    {selectedCharacter ? selectedCharacter.nameService : ''}
+                    {selectedCharacter ? selectedCharacter.name : ''}
                 </Typography>
                 <img src={selectedCharacter ? selectedCharacter.avatar : ''} style={{width: '300px', height: '200px', borderRadius:25, marginLeft:50}} alt='dios'/>
                 <Typography id="modal-modal-description" sx={{ mt: 2 }} style={{fontSize: 20,textAlign: 'center'}}>
-                    {selectedCharacter ? selectedCharacter.serviceDescription : ''}
+                    {selectedCharacter ? selectedCharacter.description : ''}
                 </Typography>
                 <div className='container-buttons'>
                   <Button variant="contained" color="primary" startIcon={<Favorite/>} onClick={handleFavorite}/>

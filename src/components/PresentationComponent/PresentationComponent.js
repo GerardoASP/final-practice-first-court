@@ -2,57 +2,28 @@ import React from 'react'
 import Footer from '../Footer/Footer'
 import "./PresentationComponent.scss"
 import Navbar from '../menu/menu'
+import Logo from '../../assets/images/logo_gerencia-removebg-preview.png';
 const PresentationComponent = () => {
   return (
     <div className='presentation-container'>
       <Navbar />
-      <img src='https://www.nunsys.com/wp-content/uploads/2023/03/SAP-ERP-scaled.jpg' className='image-central'/>
-      <div className='services-erp-text'>
-        Services-Modules
-      </div>
-      <div className='list-services-erp'>
-        <div className='service-erp'>
-            <div className='services-erp-text-2'>
-                Inventory
-            </div>
-            <img src='https://cdn-icons-png.flaticon.com/512/10822/10822008.png' className='image-inventory'/>
+      <div className='section-one-presentation'>
+        <img src={Logo} className='image-section-one'/>
+        <div className='text-section-one'>
+            Bienvenidos
         </div>
       </div>
-      <div className='information-container'>
-        <div className='services-erp-text-2'>
-            About us
+      <div className='section-two-context'>
+        <div className='text-section-two'>
+            Services-Modules
         </div>
-        <div className='services-erp-text-2'>
-            Triptop System
+        <div className='card-module'>
+            <svg viewBox="0 0 24 24" id="meteor-icon-kit__regular-inventory" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g clip-path="url(#clip0_525_147)"> <path fill-rule="evenodd" clip-rule="evenodd" d="M2 1C2 0.447715 1.55228 0 1 0C0.447715 0 0 0.447715 0 1V23C0 23.5523 0.447715 24 1 24C1.55228 24 2 23.5523 2 23V22H22V23C22 23.5523 22.4477 24 23 24C23.5523 24 24 23.5523 24 23V1C24 0.447715 23.5523 0 23 0C22.4477 0 22 0.447715 22 1V8H20V3C20 2.44772 19.5523 2 19 2H11C10.4477 2 10 2.44772 10 3V4H5C4.44772 4 4 4.44772 4 5V8H2V1ZM10 6H6V8H10V6ZM2 10V20H4V13C4 12.4477 4.44772 12 5 12H13C13.5523 12 14 12.4477 14 13V14H19C19.5523 14 20 14.4477 20 15V20H22V10H2ZM18 8V4H12V8H18ZM12 20H6V14H12V20ZM14 20V16H18V20H14Z" fill="#758CA3"></path> </g> <defs> <clipPath id="clip0_525_147"> <rect width="24" height="24" fill="white"></rect> </clipPath> </defs> </g></svg>
+            <p class="module-heading">Inventory</p>
+
         </div>
-        <div className='worker-container'>
-            <div className='worker'>
-                <img src='https://cdn-icons-png.flaticon.com/256/25/25645.png' className='image-worker'/>
-                <div className='services-erp-text-3'>
-                    Andres Felipe Granada Velásquez
-                </div>
-            </div>
-            <div className='worker'>
-                <img src='https://cdn-icons-png.flaticon.com/256/3541/3541240.png' className='image-worker'/>
-                <div className='services-erp-text-3'>
-                    Oscar David Gomez
-                </div>
-            </div>
-            <div className='worker'>
-                <img src='https://cdn-icons-png.flaticon.com/256/9254/9254559.png' className='image-worker'/>
-                <div className='services-erp-text-3'>
-                    Gerardo Antonio Sánchez Pinilla
-                </div>
-            </div>
-        </div>
-        <p>
-            Engineering students from the Autonomous 
-            University of Manizales whose main objective 
-            is the development of ERP Modules for 
-            optimize business processes.
-        </p>
-       </div>
-       <Footer />
+      </div>
+      <Footer />
     </div>
   )
 }
