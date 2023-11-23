@@ -7,7 +7,7 @@ const FavoritesCharactersList = ({ favorites }) => {
   return (
     <div className='Container5' id='Container5' >
       <div className='title-slides-two'>
-        <h1>Favorites</h1>
+        <h1></h1>
       </div>
       <div className="img-content-grid">
         {favorites && favorites.length > 0 ? (
@@ -34,7 +34,7 @@ const FavoritesCharactersList = ({ favorites }) => {
 	              <div className="final-container">
 		              <div className="item-text">
 			              <Typography variant="subtitle1" color="text.secondary">
-                      Favorite
+                      In Stock
                     </Typography>
 		              </div>
 	              </div>
@@ -42,7 +42,7 @@ const FavoritesCharactersList = ({ favorites }) => {
             </div>
           ))
           ) : (
-            <p>No hay favoritos</p>
+            <p>No hay personajes en inventario</p>
           )
         }
       </div>

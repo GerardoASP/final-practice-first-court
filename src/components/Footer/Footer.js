@@ -2,7 +2,7 @@ import { LinkedIn, LocationOn } from '@material-ui/icons'
 import { Facebook, Instagram, LocalPhone, YouTube } from '@mui/icons-material'
 import { Box, Container, Grid,Typography } from '@mui/material'
 import React from 'react'
-import Avatar from '../../assets/images/Hugo-Salazar-Ospina-removebg-preview.png';
+import Avatar from '../../assets/images/logo_gerencia-removebg-preview.png';
 import './Footer.scss';
 import { Link } from 'react-router-dom';
 import { IconButton } from '@material-ui/core';
@@ -20,7 +20,7 @@ const Footer = () => {
         p: 6,
       }}
     >
-        <Container>
+        <Container style={{minHeight:50}}>
             <Grid container spacing={5}>
                 <Grid item xs={12} sm={4}>
                     <Typography variant="h6" color="text.primary" gutterBottom>
@@ -61,9 +61,8 @@ const Footer = () => {
                         Politica y privacidad de los datos
                     </Typography>
                     <Link to="/policies">
-                        <IconButton color="primary" aria-label="add to shopping cart">
-                            <img src={Avatar} />
-                        </IconButton>
+                            <img src={Avatar} className='avatar'/>
+                        
                     </Link>
                 </Grid>
             </Grid>

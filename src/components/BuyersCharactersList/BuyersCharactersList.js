@@ -8,7 +8,7 @@ const BuyersCharactersList = ({ buyers }) => {
   return (
     <div className='Container6' id='Container6' >
       <div className='title-slides-two'>
-        <h1>Buyers</h1>
+        <h1></h1>
       </div>
       <div className="img-content-grid-2">
         {buyers && buyers.length > 0 ? (
@@ -35,7 +35,7 @@ const BuyersCharactersList = ({ buyers }) => {
 	              <div className="final-container-2">
 		              <div className="item-text-2">
 			              <Typography variant="subtitle1" color="text.secondary">
-                      Buyer
+                      In Process
                     </Typography>
 		              </div>
 	              </div>
@@ -43,7 +43,7 @@ const BuyersCharactersList = ({ buyers }) => {
             </div>
           ))
           ) : (
-            <p>No hay personajes en el carrito de compras</p>
+            <p>No hay personajes en proceso</p>
           )
         }
       </div>

@@ -9,7 +9,6 @@ const HomeUser = () => {
     <div className='HomeUser'>
       <SectionOne />
       <SectionTwo />
-      <SectionThree />
     </div>
   )
 }
