@@ -9,6 +9,7 @@ import Login from './components/Login/Login';
 import PresentationComponent from './components/PresentationComponent/PresentationComponent';
 import HomeUser from './components/HomeUser/HomeUser';
 import ListUser from './components/ListUser/ListUser';
+import VerifyComponent from './components/VerifyComponent/VerifyComponent';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path='/HomeAdmin' element={<Home />}></Route>
           <Route path='/HomeUser' element={<HomeUser/>}/>
           <Route path='/ListUser' element={<ListUser/>}></Route>
+          <Route path='/VerifyAccount' element={<VerifyComponent />}></Route>
         </Routes>
       </Router>
     </div>

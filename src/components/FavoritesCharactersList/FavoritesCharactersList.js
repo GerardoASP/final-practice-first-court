@@ -14,35 +14,23 @@ const FavoritesCharactersList = ({ favorites }) => {
           favorites.map((character) => (
             <div key={character._id}>
               <div className="container-card">
-	              <div className="container-header">
-		              <div className="item-id">
-			              <Typography variant="subtitle1" color="text.secondary">
-                      {character._id}
-                    </Typography>
-		              </div>
-		              <div className="item-name">
-			              <Typography variant="subtitle1" color="text.secondary">
-                      {character.nameService}
-                    </Typography>
-		              </div>
-	              </div>
-	              <div className="container-body">
-		              <div className="item-image">
-			              <img src={character.avatar} alt={`Avatar ${character._id}`}/>
-		              </div>
-	              </div>
-	              <div className="final-container">
-		              <div className="item-text">
-			              <Typography variant="subtitle1" color="text.secondary">
-                      In Stock
-                    </Typography>
-		              </div>
-	              </div>
+              <div class="card">
+                  <div class="card-img">
+                    <img src={character.avatar} alt={`Avatar ${character._id}`}/>
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">{character.nameService}</p>
+                    <p class="text-body">{character.description}</p>
+                  </div>
+                  <div class="card-footer">
+  	                <span class="text-title">In Stock</span>
+                  </div>
+                </div>
               </div>
             </div>
           ))
           ) : (
-            <p>No hay personajes en inventario</p>
+            <p>No hay productos en inventario</p>
           )
         }
       </div>

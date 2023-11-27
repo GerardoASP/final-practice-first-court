@@ -15,35 +15,23 @@ const BuyersCharactersList = ({ buyers }) => {
           buyers.map((character) => (
             <div key={character._id}>
               <div className="container-card-2">
-	              <div className="container-header-2">
-		              <div className="item-id-2">
-			              <Typography variant="subtitle1" color="text.secondary">
-                      {character._id}
-                    </Typography>
-		              </div>
-		              <div className="item-name-2">
-			              <Typography variant="subtitle1" color="text.secondary">
-                      {character.nameService}
-                    </Typography>
-		              </div>
-	              </div>
-	              <div className="container-body-2">
-		              <div className="item-image-2">
-			              <img src={character.avatar} alt={`Avatar ${character._id}`}/>
-		              </div>
-	              </div>
-	              <div className="final-container-2">
-		              <div className="item-text-2">
-			              <Typography variant="subtitle1" color="text.secondary">
-                      In Process
-                    </Typography>
-		              </div>
-	              </div>
+                <div class="card">
+                  <div class="card-img">
+                    <img src={character.avatar} alt={`Avatar ${character._id}`}/>
+                  </div>
+                  <div class="card-info">
+                    <p class="text-title">{character.nameService}</p>
+                    <p class="text-body">{character.description}</p>
+                  </div>
+                  <div class="card-footer">
+  	                <span class="text-title">In Process</span>
+                  </div>
+                </div>
               </div>
             </div>
           ))
           ) : (
-            <p>No hay personajes en proceso</p>
+            <p>No hay productos en proceso</p>
           )
         }
       </div>
