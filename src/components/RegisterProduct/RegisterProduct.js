@@ -38,32 +38,25 @@ const RegisterProduct = () => {
       }
   }
   return (
-    <div className='register-product-container'>
-      <div className='register-product-header'>
-        Registrer Product
-      </div>
-      <center style={{marginBottom:20}}>
-        "Ingresa los datos para agregar producto"
-      </center>
-      <div className='name-container'>
-        <label>
-          name
-        </label>
-        <input type="text" name="name" className='input-text' onChange={e => setName(e.target.value)}/>
-      </div>
-      <div className='description-container'>
-        <label>
-          description
-        </label>
-        <input type="text" name="description" className='input-text' onChange={e => setDescription(e.target.value)}/>
-      </div>
-      <div className='avatar-container'>
-        <label>
-          avatar
-        </label>
-        <input type="text" name="avatar" className='input-text' onChange={e => setAvatar(e.target.value)}/>
-      </div>
-      <Button onClick={registerProduct}>Product Register</Button>
+    <div className="register-product-container">
+      <form className="form">
+      <p className="title">Register Product </p>
+      <p className="message">Ingresa los datos para agregar producto</p>
+      <label>
+          <input className="input" type="text" placeholder="" required="" value={name} onChange={e => setName(e.target.value)}/>
+          <span>Name</span>
+      </label> 
+       <label>
+          <input className="input" type="text" placeholder="" required="" value={description} onChange={e => setDescription(e.target.value)}/>
+          <span>Description</span>
+      </label> 
+
+      <label>
+          <input className="input" type="text" placeholder="" required="" value={avatar} onChange={e => setAvatar(e.target.value)}/>
+          <span>Avatar</span>
+      </label>
+      <Button className="submit" onClick={registerProduct}>Product Register</Button>
+  </form>
     </div>
   )
 }

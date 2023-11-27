@@ -129,7 +129,7 @@ const Register = () => {
    			<label>
        				<select name="municipalities" id="municipality" onChange={e => setMunicipality(e.target.value)} className="input">
        					{municipalities.map(municipality => (
-         					<option key={municipality} value={municipality} class="input">
+         					<option key={municipality} value={municipality} className="input">
            						{municipality}
          					</option>
        					))}

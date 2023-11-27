@@ -1,7 +1,7 @@
 // Importa las dependencias necesarias de React y otros recursos como estilos y archivos de imágenes.
 import React, { useState, Component } from 'react';
 import './menuAdmin.scss'; // Importa los estilos para este componente.
-import Logo from '../../assets/images/UAM-Logo.png'; // Importa la imagen del logo.
+import Logo from '../../assets/images/logo_gerencia-removebg-preview.png'; // Importa la imagen del logo.
 import Avatar from '../../assets/images/avatar.jpeg'; // Importa la imagen del avatar.
 import 'font-awesome/css/font-awesome.min.css'; // Importa estilos de Font Awesome, una biblioteca de iconos.
 //import {Link} from 'react-scroll' //Importa El Objeto Link
