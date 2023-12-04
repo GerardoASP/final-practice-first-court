@@ -10,6 +10,7 @@ import PresentationComponent from './components/PresentationComponent/Presentati
 import HomeUser from './components/HomeUser/HomeUser';
 import ListUser from './components/ListUser/ListUser';
 import VerifyComponent from './components/VerifyComponent/VerifyComponent';
+import AboutComponent from './components/AboutComponent/AboutComponent';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
           <Route path='/HomeUser' element={<HomeUser/>}/>
           <Route path='/ListUser' element={<ListUser/>}></Route>
           <Route path='/VerifyAccount' element={<VerifyComponent />}></Route>
+          <Route path='/AboutUs' element={<AboutComponent/>}></Route>
         </Routes>
       </Router>
     </div>

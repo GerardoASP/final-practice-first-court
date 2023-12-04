@@ -83,14 +83,14 @@ const Register = () => {
     setDepartment(event.target.value)
    };
   useEffect(() => {
-    fetch('https://evaluation-practice-dev-bqxg.1.us-1.fl0.io/api/v1/addresses/departmentsFetch')
+    fetch('https://evaluation-practice-dev-ddtt.4.us-1.fl0.io/api/v1/addresses/departmentsFetch')
       .then(response => response.json())
       .then(data => setDepartments(data));
   }, []);
 
   useEffect(() => {
     if (selectedDepartment) {
-      fetch(`https://evaluation-practice-dev-bqxg.1.us-1.fl0.io/api/v1/addresses/municipalities/${selectedDepartment}`)
+      fetch(`https://evaluation-practice-dev-ddtt.4.us-1.fl0.io/api/v1/addresses/municipalities/${selectedDepartment}`)
         .then(response => response.json())
         .then(data => setMunicipalities(data));
     }

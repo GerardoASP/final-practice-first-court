@@ -11,7 +11,7 @@ import { Favorite, ShoppingCart } from '@material-ui/icons'
 import FavoritesCharactersList from '../FavoritesCharactersList/FavoritesCharactersList'
 import BuyersCharactersList from '../BuyersCharactersList/BuyersCharactersList'
 import Footer from '../Footer/Footer'
-
+import ArticleIcon from '@mui/icons-material/Article';
 
 
 
@@ -79,12 +79,83 @@ export const SlideNav = () => {
     };
     const handleClose = () => setOpen(false);
 
-    const handleFavorite = () => {
-      setFavorites(prevFavorites => [...prevFavorites, selectedCharacter]);
+    const handleFavorite = async () => {
+      // Asegúrate de tener un producto seleccionado
+      if (!selectedCharacter) {
+        console.error("No hay un personaje seleccionado.");
+        return;
+      }
+    
+      // Actualiza el estado local
+      setFavorites((prevFavorites) => [...prevFavorites, selectedCharacter]);
+    
+      // Actualiza el estado en el servidor
+      const productId = selectedCharacter._id;
+
+      try {
+        const response = await fetch(`http://localhost:3000/api/v1/products/update-product/${selectedCharacter._id}`, {
+          method: 'PUT',  // Utiliza el método HTTP correcto para la actualización (en este caso, PUT)
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            // Puedes enviar la información que desees actualizar en el cuerpo de la solicitud
+            // Por ejemplo, podrías tener un campo 'isFavorite' en tu modelo de producto
+            state: "In_Stock",  // O cualquier otro campo que necesites actualizar
+          }),
+        });
+        console.log(response);
+        if (!response.ok) {
+          console.error('Error al actualizar el estado del producto en el servidor:', response.status);
+          // Si es necesario, puedes revertir el cambio en el estado local
+          setFavorites((prevFavorites) => prevFavorites.filter((item) => item._id !== productId));
+        } else {
+          alert('Estado del producto actualizado con éxito.');
+        }
+      } catch (error) {
+        console.error('Error en la solicitud de actualización:', error);
+        // Si ocurre un error, puedes revertir el cambio en el estado local
+        setFavorites((prevFavorites) => prevFavorites.filter((item) => item._id !== productId));
+      }
     };
 
-    const handleBuyer = () => {
-      setBuyers(prevBuyers => [...prevBuyers, selectedCharacter]);
+    const handleBuyer = async () => {
+      // Asegúrate de tener un producto seleccionado
+      if (!selectedCharacter) {
+        console.error("No hay un personaje seleccionado.");
+        return;
+      }
+    
+      // Actualiza el estado local
+      setBuyers((prevBuyers) => [...prevBuyers, selectedCharacter]);
+    
+      // Actualiza el estado en el servidor
+      const productId = selectedCharacter._id;
+
+      try {
+        const response = await fetch(`http://localhost:3000/api/v1/products/update-product/${selectedCharacter._id}`, {
+          method: 'PUT',  // Utiliza el método HTTP correcto para la actualización (en este caso, PUT)
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            // Puedes enviar la información que desees actualizar en el cuerpo de la solicitud
+            // Por ejemplo, podrías tener un campo 'isFavorite' en tu modelo de producto
+            state: "In_Process",  // O cualquier otro campo que necesites actualizar
+          }),
+        });
+        if (!response.ok) {
+          console.error('Error al actualizar el estado del producto en el servidor:', response.status);
+          // Si es necesario, puedes revertir el cambio en el estado local
+          setBuyers((prevBuyers) => prevBuyers.filter((item) => item._id !== productId));
+        } else {
+          alert('Estado del producto actualizado con éxito.');
+        }
+      } catch (error) {
+        console.error('Error en la solicitud de actualización:', error);
+        // Si ocurre un error, puedes revertir el cambio en el estado local
+        setBuyers((prevBuyers) => prevBuyers.filter((item) => item._id !== productId));
+      }
     };
 
     const [products,setProducts]= useState([])
@@ -93,6 +164,10 @@ export const SlideNav = () => {
         .then(response => response.json())
         .then(data => setProducts(data));
     }, []);
+
+    const handleState = async () => {
+
+    }
   return (
     <div className='slideContainer' id='slideContainer'>
         <div className='title-slides'>
@@ -127,7 +202,7 @@ export const SlideNav = () => {
                 </Typography>
                 <div className='container-buttons'>
                   <Button variant="contained" color="primary" startIcon={<Favorite/>} onClick={handleFavorite}/>
-                  <Button variant="contained" color="primary" startIcon={<ShoppingCart/>} onClick={handleBuyer}/> 
+                  <Button variant="contained" color="primary" startIcon={<ArticleIcon/>} onClick={handleBuyer}/> 
                 </div>
             </Box>
         </Modal>

@@ -39,18 +39,8 @@ class Navbar extends Component {
         {/* Lista de opciones de navegación */}
         <ul className={`navbar-options ${isMenuOpen ? 'active' : ''}`}>
           <li>
-            <Link to="SectionOne" spy={true} smooth={true} offset={-70} duration={500}>
+            <Link to="/AboutUs" spy={true} smooth={true} offset={-70} duration={500}>
                 About us
-            </Link>
-          </li>
-          <li>
-            <Link to="SectionTwo" spy={true} smooth={true} offset={-70} duration={500}>
-                Contact
-            </Link>
-          </li>
-          <li>
-            <Link to="SectionThree" spy={true} smooth={true} offset={-70} duration={500}>
-                Products
             </Link>
           </li>
         </ul>
